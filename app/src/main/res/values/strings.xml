@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Caixa</string>
+    <string name="login">Login</string>
+    <string name="conta">Conta</string>
+    <string name="hintConta">0000000</string>
+    <string name="agencia">Agencia</string>
+    <string name="hintAgencia">0000</string>
+    <string name="senha">Senha</string>
+    <string name="hintSenha">xxxx</string>
+    <string name="logar">Logar</string>
+</resources>
