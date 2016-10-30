@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="usjt.caixa.MainActivity">
+    tools:context="usjt.caixa.controller.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -87,6 +87,7 @@
             android:text="@string/logar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button" />
+            android:id="@+id/button"
+            android:onClick="logar"/>
     </LinearLayout>
 </RelativeLayout>
