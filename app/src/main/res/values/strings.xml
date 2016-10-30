@@ -9,4 +9,12 @@
     <string name="hintSenha">xxxx</string>
     <string name="logar">Logar</string>
     <string name="menu">Menu</string>
+    <string name="debito">Debito Automatico</string>
+    <string name="operadora">Codigo da Operadora</string>
+    <string name="consumidor">Codigo do Consumidor</string>
+    <string name="valor">Valor</string>
+    <string name="hintValor">0.00</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="transferencia">Transferencia</string>
+    <string name="transferir">Transferir</string>
 </resources>

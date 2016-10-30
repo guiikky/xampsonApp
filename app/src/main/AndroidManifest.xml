@@ -20,7 +20,10 @@
         </activity>
         <activity android:name=".controller.MenuActivity" />
         <activity android:name=".controller.ListaExtratoActivity" />
-        <activity android:name=".controller.DetalheExtratoActivity"></activity>
+        <activity android:name=".controller.DetalheExtratoActivity" />
+        <activity android:name=".controller.SaldoActivity" />
+        <activity android:name=".controller.TransferenciaActivity" />
+        <activity android:name=".controller.DebitoAutomaticoActivity"></activity>
     </application>
 
 </manifest>

@@ -28,15 +28,46 @@
         android:id="@+id/nomeCliente"
         android:layout_marginStart="33dp"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="Cliente" />
+
+    <Button
+        android:text="Saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:onClick="saldo"
+        android:layout_below="@+id/nomeCliente"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 
     <Button
         android:text="Extrato"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nomeCliente"
-        android:layout_alignStart="@+id/nomeCliente"
-        android:layout_marginTop="56dp"
         android:id="@+id/button2"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/button4"
+        android:layout_alignStart="@+id/button4"
         android:onClick="extrato"/>
+
+    <Button
+        android:text="DebitoAutomatico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/button3"
+        android:layout_centerHorizontal="true"
+        android:onClick="debitoAutomatico"/>
+
+    <Button
+        android:text="Transferencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:onClick="transferencia"/>
 </RelativeLayout>

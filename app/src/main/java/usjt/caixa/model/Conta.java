@@ -24,6 +24,11 @@ public class Conta implements Serializable {
         this.senha = senha;
     }
 
+    public Conta(int conta, int agencia) {
+        this.conta = conta;
+        this.agencia = agencia;
+    }
+
     public int getConta() {
         return conta;
     }
