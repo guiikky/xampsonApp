@@ -10,7 +10,6 @@ import java.util.Calendar;
 
 import usjt.caixa.R;
 import usjt.caixa.model.Conta;
-import usjt.caixa.model.DebitoAutomatico;
 
 public class DebitoAutomaticoActivity extends AppCompatActivity {
 
@@ -35,7 +34,5 @@ public class DebitoAutomaticoActivity extends AppCompatActivity {
         Conta conta = (Conta)intent.getSerializableExtra(MenuActivity.CONTA);
         Calendar cldr = Calendar.getInstance();
         String data = cldr.get(Calendar.DAY_OF_MONTH) + "/" + (cldr.get(Calendar.MONTH) + 1) + "/" + cldr.get(Calendar.YEAR);
-
-        DebitoAutomatico debito = new DebitoAutomatico(operadora, consumidor, data, valor, conta);
     }
 }

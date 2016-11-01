@@ -18,6 +18,13 @@ public class Conta implements Serializable {
         this.cliente = cliente;
     }
 
+    public Conta(int conta, int agencia, double saldo, Cliente cliente) {
+        this.conta = conta;
+        this.agencia = agencia;
+        this.saldo = saldo;
+        this.cliente = cliente;
+    }
+
     public Conta(int conta, int agencia, int senha) {
         this.conta = conta;
         this.agencia = agencia;
@@ -82,5 +89,14 @@ public class Conta implements Serializable {
 
     }
 
-
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "conta=" + conta +
+                ", agencia=" + agencia +
+                ", senha=" + senha +
+                ", saldo=" + saldo +
+                ", cliente=" + cliente +
+                '}';
+    }
 }

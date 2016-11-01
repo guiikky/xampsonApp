@@ -24,6 +24,12 @@ public class Extrato implements Comparable<Extrato>, Serializable {
         this.conta = conta;
     }
 
+    public Extrato(String data, String operacao, double valor) {
+        this.data = data;
+        this.operacao = operacao;
+        this.valor = valor;
+    }
+
     public int getId() {
         return id;
     }

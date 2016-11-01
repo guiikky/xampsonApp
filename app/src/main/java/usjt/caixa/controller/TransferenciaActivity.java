@@ -1,22 +1,27 @@
 package usjt.caixa.controller;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import java.util.Calendar;
 
 import usjt.caixa.R;
+import usjt.caixa.model.CaixaRequester;
 import usjt.caixa.model.Conta;
-import usjt.caixa.model.Transferencia;
 
 public class TransferenciaActivity extends AppCompatActivity {
 
     private EditText con;
     private EditText age;
     private EditText val;
+    private CaixaRequester requester;
+    private Activity atividade = this;
+    private Conta cos;
+    private Conta cop;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +34,28 @@ public class TransferenciaActivity extends AppCompatActivity {
 
     public void transferir(View view) {
         Intent intent = getIntent();
-        int conta = Integer.parseInt(con.getText().toString());
-        int agencia = Integer.parseInt(age.getText().toString());
-        double valor = Double.parseDouble(val.getText().toString());
-        Conta account = (Conta)intent.getSerializableExtra(MenuActivity.CONTA);
+        final int conta = Integer.parseInt(con.getText().toString());
+        final int agencia = Integer.parseInt(age.getText().toString());
+        final double valor = Double.parseDouble(val.getText().toString());
         Calendar cldr = Calendar.getInstance();
-        String data = cldr.get(Calendar.DAY_OF_MONTH) + "/" + (cldr.get(Calendar.MONTH) + 1) + "/" + cldr.get(Calendar.YEAR);
+        final String data = cldr.get(Calendar.DAY_OF_MONTH) + "/" + (cldr.get(Calendar.MONTH) + 1) + "/" + cldr.get(Calendar.YEAR);
+        cop = (Conta)intent.getSerializableExtra(MenuActivity.CONTA);
 
-        Transferencia transferencia = new Transferencia(account, new Conta(conta, agencia), data, valor);
+        requester = new CaixaRequester();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                cos = requester.validar(conta, agencia);
+                if(cos.getConta()!= -1){
+                    requester.transferencia(cop.getConta(), cos.getConta(), data, valor);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            atividade.finish();
+                        }
+                    });
+                }
+            }
+        }).start();
     }
 }
